@@ -1,4 +1,4 @@
-DP-600: Microsoft Fabric Analytics Engineer – Hands-on Labs
+# DP-600: Microsoft Fabric Analytics Engineer – Hands-on Labs
 
 This repository contains my completed hands-on labs for the DP-600 (Microsoft Certified: Fabric Analytics Engineer Associate) learning path, which I worked through as part of my data analytics studies at SAIT (Southern Alberta Institute of Technology), Calgary.
 
