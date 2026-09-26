@@ -1,18 +1,8 @@
 # DP-600: Microsoft Fabric Analytics Engineer – Hands-on Labs
 
-![Microsoft Fabric](https://img.shields.io/badge/Microsoft%20Fabric-117865?logo=microsoft&logoColor=white)
-![T-SQL](https://img.shields.io/badge/T--SQL-CC2927?logo=microsoftsqlserver&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=black)
-![Delta Lake](https://img.shields.io/badge/Delta%20Lake-00ADD4)
+This repository contains my completed hands-on labs for the **DP-600 (Microsoft Certified: Fabric Analytics Engineer Associate)** learning path, which I worked through as part of my data analytics studies at SAIT (Southern Alberta Institute of Technology), Calgary.
 
-This repository holds my completed hands-on labs for **DATA 034**, a course at SAIT (Southern Alberta Institute of Technology) in Calgary. The course follows the **DP-600: Microsoft Certified Fabric Analytics Engineer Associate** learning path.
-
-The labs document my practical experience with **Microsoft Fabric**:
-
-- building lakehouses and data warehouses
-- loading and querying data with T-SQL
-- discovering and sharing data through OneLake
-- preparing semantic models for Power BI reporting
+The goal of this repository is to document my practical experience with **Microsoft Fabric** — building lakehouses and data warehouses, discovering and connecting to data in OneLake, designing dimensional models, loading and querying data with SQL, and preparing semantic models for reporting in Power BI.
 
 ---
 
@@ -20,31 +10,34 @@ The labs document my practical experience with **Microsoft Fabric**:
 
 | # | Lab | Key skills |
 |---|-----|-----------|
-| 1 | [Get started with a lakehouse in Microsoft Fabric](./Lab-01-Lakehouse) | Workspaces, lakehouses, uploading files, loading CSV data into Delta tables, SQL analytics endpoint, no-code visual queries |
-| 2 | [Analyze data in a data warehouse](./Lab-02-Data-Warehouse) | Creating a warehouse, building a star schema with T-SQL, analytical joins and aggregations, views, visual queries, semantic model relationships |
-| 3 | [Discover and connect to data in OneLake](./Lab-03-OneLake-Discovery) | OneLake catalog, OneLake shortcuts (no data copied), querying shortcut tables with T-SQL, Direct Lake semantic models, Explore this data |
+| 1 | [Get started with a lakehouse in Microsoft Fabric](./Lab-01-Lakehouse) | Workspaces, lakehouses, uploading files, loading data into Delta tables, querying with the SQL analytics endpoint |
+| 2 | [Analyze data in a data warehouse](./Lab-02-Data-Warehouse) | Creating a warehouse, creating tables and inserting data with T-SQL, querying tables, creating views, visual queries, defining a data model |
+| 3 | [Discover and connect to data in OneLake](./Lab-03-OneLake-Discovery) | OneLake catalog, Delta Lake file structure, OneLake shortcuts, T-SQL aggregation queries, Direct Lake semantic models, Explore this data |
+| 4 | [Design and implement a dimensional model](./Lab-04-Dimensional-Model) | Star schema design, fact and dimension tables, grain and measures, surrogate and natural keys, NOT ENFORCED primary/foreign keys, SCD Type 1 and Type 2 |
+| … | *More labs will be added as the course continues* | |
 
 Each lab folder contains:
-- a **README** walking through each step with screenshots
-- a **`scripts/`** folder with the SQL I wrote and ran
-- a **`screenshots/`** folder with captures from my Fabric workspace
+- **Screenshots** of each completed step
+- **SQL scripts / notebooks** used in the lab (where applicable)
+- A short **reflection** on what I learned
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- **Microsoft Fabric:** Lakehouse, Data Warehouse, SQL analytics endpoint, OneLake catalog, shortcuts
-- **T-SQL:** DDL/DML, joins, aggregations, views
-- **Delta Lake / Parquet** table storage
-- **Power Query**-based visual queries
-- **Power BI semantic models** (Direct Lake), relationships, Explore this data
+- Microsoft Fabric (Lakehouse, Data Warehouse, SQL analytics endpoint)
+- OneLake (catalog, shortcuts)
+- T-SQL (DDL, DML, table constraints, analytical queries)
+- Delta Lake tables (Parquet + transaction log)
+- Dimensional modeling (star schema, slowly changing dimensions)
+- Power BI (semantic models, Direct Lake, visual queries, Explore this data)
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-dp-600-labs/
+DP-600-Labs/
 ├── Lab-01-Lakehouse/
 │   ├── screenshots/
 │   ├── scripts/
@@ -57,6 +50,10 @@ dp-600-labs/
 │   ├── screenshots/
 │   ├── scripts/
 │   └── README.md
+├── Lab-04-Dimensional-Model/
+│   ├── screenshots/
+│   ├── scripts/
+│   └── README.md
 └── README.md
 ```
 
@@ -64,23 +61,20 @@ dp-600-labs/
 
 ## 💡 Key Takeaways
 
-- The **lakehouse** and **data warehouse** approaches in Microsoft Fabric differ, and each suits different cases:
-
-  | | Lakehouse | Warehouse |
-  |---|---|---|
-  | Storage | Files and Delta tables | Relational tables |
-  | SQL access | Read-only SQL endpoint | Full read/write T-SQL |
-
-- Raw files become queryable **Delta tables**, and the `_delta_log` tracks every change.
-- A **star schema** separates facts from dimensions, and **views** make that model easier to reuse.
-- **OneLake shortcuts** let teams share data across lakehouses and workspaces without duplicating it.
-- **Semantic models** turn tables into a model ready for reporting, with relationships and a single cross-filter direction.
+- How the **lakehouse** and **data warehouse** approaches differ in Microsoft Fabric, and when to use each
+- How to organize work in Fabric **workspaces**
+- How to find data across an organization with the **OneLake catalog**
+- How **shortcuts** let teams share one copy of data instead of duplicating it
+- How to create tables, load data and write analytical queries with **T-SQL**
+- How to design a **star schema**: choosing the grain, separating facts from dimensions, and knowing which measures are additive
+- How **slowly changing dimensions** keep history accurate (Type 2) or apply corrections to all history (Type 1)
+- How to build **views**, **data models** and **semantic models** that make data ready for reporting
 
 ---
 
 ## 📌 About the Labs
 
-The labs are based on the official Microsoft Learn exercises for Microsoft Fabric. I completed them in a Fabric trial and lab environment provided through my course. The course materials and assignment instructions belong to their respective owners. This repository contains only my own work: the steps I performed, my screenshots, my SQL and my notes.
+The labs are based on the official Microsoft Learn exercises for Microsoft Fabric and were completed in a lab environment provided through my course. The course materials and assignment instructions belong to their respective owners; this repository only contains my own work.
 
 ---
 
@@ -88,4 +82,4 @@ The labs are based on the official Microsoft Learn exercises for Microsoft Fabri
 
 **Kyrylo Tsyrulik**
 Data Analytics student | Calgary, Alberta
-[GitHub](https://github.com/kirzk)
+[LinkedIn](https://www.linkedin.com/in/kll-zk) · [GitHub](https://github.com/kirzk)
