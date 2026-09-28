@@ -1,0 +1,82 @@
+// Lab 05 – DAX calculations added to the Adventure Works Sales Analysis model
+// (Power BI Desktop, 14-Starter-Sales Analysis.pbix)
+
+// ============================================================
+// Calculated tables
+// ============================================================
+
+// Copy of Salesperson (Performance) – analyzes the sales each person made
+Salesperson =
+'Salesperson (Performance)'
+
+// Date table covering full fiscal years (fiscal year ends in June)
+Date = CALENDARAUTO(6)
+
+
+// ============================================================
+// Calculated columns on the Date table
+// ============================================================
+
+// Fiscal year: July 1, 2017 belongs to FY2018
+Year = "FY" & YEAR('Date'[Date]) + IF(MONTH('Date'[Date]) > 6, 1)
+
+// Fiscal quarter: July–September is Q1
+Quarter =
+'Date'[Year] & " Q"
+    & IF(
+        MONTH('Date'[Date]) <= 3,
+        3,
+        IF(
+            MONTH('Date'[Date]) <= 6,
+            4,
+            IF(
+                MONTH('Date'[Date]) <= 9,
+                1,
+                2
+            )
+        )
+    )
+
+// Month label, e.g. "2017 Jul" (sorted by MonthKey)
+Month = FORMAT('Date'[Date], "yyyy MMM")
+
+// Hidden numeric key used only to sort Month chronologically, e.g. 201707
+MonthKey = (YEAR('Date'[Date]) * 100) + MONTH('Date'[Date])
+
+
+// ============================================================
+// Simple measures on the Sales table
+// ============================================================
+
+// Display folder: Pricing (2 decimal places)
+Avg Price = AVERAGE(Sales[Unit Price])
+Median Price = MEDIAN(Sales[Unit Price])
+Min Price = MIN(Sales[Unit Price])
+Max Price = MAX(Sales[Unit Price])
+
+// Display folder: Counts (thousands separator)
+Orders = DISTINCTCOUNT(Sales[SalesOrderNumber])
+Order Lines = COUNTROWS(Sales)
+
+
+// ============================================================
+// Additional measures on the Targets table
+// ============================================================
+
+// Returns a target only when exactly one salesperson is in filter context,
+// so the misleading grand total becomes BLANK. (Currency, 0 decimals)
+Target =
+IF(
+    HASONEVALUE('Salesperson (Performance)'[Salesperson]),
+    SUM(Targets[TargetAmount])
+)
+
+// Actual sales minus target for one salesperson. (Currency, 0 decimals)
+Variance =
+IF(
+    HASONEVALUE('Salesperson (Performance)'[Salesperson]),
+    SUM(Sales[Sales]) - [Target]
+)
+
+// Variance as a share of target. (Percentage, 2 decimals)
+Variance Margin = DIVIDE([Variance], [Target])

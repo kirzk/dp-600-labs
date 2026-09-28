@@ -2,7 +2,7 @@
 
 This repository contains my completed hands-on labs for the **DP-600 (Microsoft Certified: Fabric Analytics Engineer Associate)** learning path, which I worked through as part of my data analytics studies at SAIT (Southern Alberta Institute of Technology), Calgary.
 
-The goal of this repository is to document my practical experience with **Microsoft Fabric** — building lakehouses and data warehouses, discovering and connecting to data in OneLake, designing dimensional models, loading and querying data with SQL, and preparing semantic models for reporting in Power BI.
+The goal of this repository is to document my practical experience with **Microsoft Fabric** — building lakehouses and data warehouses, discovering and connecting to data in OneLake, designing dimensional models, writing DAX calculations, loading and querying data with SQL, and preparing semantic models for reporting in Power BI.
 
 ---
 
@@ -14,6 +14,7 @@ The goal of this repository is to document my practical experience with **Micros
 | 2 | [Analyze data in a data warehouse](./Lab-02-Data-Warehouse) | Creating a warehouse, creating tables and inserting data with T-SQL, querying tables, creating views, visual queries, defining a data model |
 | 3 | [Discover and connect to data in OneLake](./Lab-03-OneLake-Discovery) | OneLake catalog, Delta Lake file structure, OneLake shortcuts, T-SQL aggregation queries, Direct Lake semantic models, Explore this data |
 | 4 | [Design and implement a dimensional model](./Lab-04-Dimensional-Model) | Star schema design, fact and dimension tables, grain and measures, surrogate and natural keys, NOT ENFORCED primary/foreign keys, SCD Type 1 and Type 2 |
+| 5 | [Create DAX calculations in semantic models](./Lab-05-DAX-Calculations) | Power BI Desktop, calculated tables and columns, CALENDARAUTO date table, fiscal hierarchy, Sort by column, measures, display folders, HASONEVALUE, DIVIDE |
 | … | *More labs will be added as the course continues* | |
 
 Each lab folder contains:
@@ -31,6 +32,7 @@ Each lab folder contains:
 - Delta Lake tables (Parquet + transaction log)
 - Dimensional modeling (star schema, slowly changing dimensions)
 - Power BI (semantic models, Direct Lake, visual queries, Explore this data)
+- DAX (calculated tables, calculated columns, measures)
 
 ---
 
@@ -54,6 +56,10 @@ DP-600-Labs/
 │   ├── screenshots/
 │   ├── scripts/
 │   └── README.md
+├── Lab-05-DAX-Calculations/
+│   ├── screenshots/
+│   ├── scripts/
+│   └── README.md
 └── README.md
 ```
 
@@ -68,6 +74,7 @@ DP-600-Labs/
 - How to create tables, load data and write analytical queries with **T-SQL**
 - How to design a **star schema**: choosing the grain, separating facts from dimensions, and knowing which measures are additive
 - How **slowly changing dimensions** keep history accurate (Type 2) or apply corrections to all history (Type 1)
+- How to use **DAX** to add calculated tables, columns and measures to a semantic model, and when a measure is better than a column
 - How to build **views**, **data models** and **semantic models** that make data ready for reporting
 
 ---
