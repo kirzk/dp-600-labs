@@ -1,0 +1,15 @@
+// Lab 06 – KQL queries against the `stock` table in the stock-store-eventhouse KQL database.
+// The table is continuously filled by the stock-data eventstream (Stock market sample source).
+
+// Preview a sample of the captured events
+stock
+| take 100
+
+// Average bid price per symbol over the last 5 minutes.
+// bidPrice is converted with todecimal() before averaging.
+// This query was pinned to the "Stock Dashboard" Real-Time Dashboard
+// and used as the source for the Activator alert (avgPrice increases by 100).
+stock
+| where ["time"] > ago(5m)
+| summarize avgPrice = avg(todecimal(bidPrice)) by symbol
+| project symbol, avgPrice
