@@ -2,7 +2,7 @@
 
 This repository contains my completed hands-on labs for the **DP-600 (Microsoft Certified: Fabric Analytics Engineer Associate)** learning path, which I worked through as part of my data analytics studies at SAIT (Southern Alberta Institute of Technology), Calgary.
 
-The goal of this repository is to document my practical experience with **Microsoft Fabric** — building lakehouses and data warehouses, discovering and connecting to data in OneLake, designing dimensional models, writing DAX calculations, analyzing streaming data in real time, loading and querying data with SQL, and preparing semantic models for reporting in Power BI.
+The goal of this repository is to document my practical experience with **Microsoft Fabric** — building lakehouses and data warehouses, discovering and connecting to data in OneLake, designing dimensional models, writing DAX calculations, analyzing streaming data in real time, transforming data with dataflows, loading and querying data with SQL, and preparing semantic models for reporting in Power BI.
 
 ---
 
@@ -16,6 +16,7 @@ The goal of this repository is to document my practical experience with **Micros
 | 4 | [Design and implement a dimensional model](./Lab-04-Dimensional-Model) | Star schema design, fact and dimension tables, grain and measures, surrogate and natural keys, NOT ENFORCED primary/foreign keys, SCD Type 1 and Type 2 |
 | 5 | [Create DAX calculations in semantic models](./Lab-05-DAX-Calculations) | Power BI Desktop, calculated tables and columns, CALENDARAUTO date table, fiscal hierarchy, Sort by column, measures, display folders, HASONEVALUE, DIVIDE |
 | 6 | [Get started with Real-Time Intelligence](./Lab-06-Real-Time-Intelligence) | Real-Time hub, eventstreams, eventhouses and KQL databases, KQL queries on live data, Real-Time Dashboards, Activator alerts |
+| 7 | [Transform data using dataflows (Gen2)](./Lab-07-Dataflows-Gen2) | Dataflow Gen2, Power Query editor, choosing columns, filtering rows, data types, renaming, custom columns, query folding, lakehouse data destination, rounding |
 | … | *More labs will be added as the course continues* | |
 
 Each lab folder contains:
@@ -35,6 +36,7 @@ Each lab folder contains:
 - Power BI (semantic models, Direct Lake, visual queries, Explore this data)
 - DAX (calculated tables, calculated columns, measures)
 - Real-Time Intelligence (eventstreams, eventhouses, KQL, Real-Time Dashboards, Activator)
+- Dataflow Gen2 (Power Query editor, Power Query M)
 
 ---
 
@@ -66,6 +68,10 @@ DP-600-Labs/
 │   ├── screenshots/
 │   ├── scripts/
 │   └── README.md
+├── Lab-07-Dataflows-Gen2/
+│   ├── screenshots/
+│   ├── scripts/
+│   └── README.md
 └── README.md
 ```
 
@@ -82,6 +88,7 @@ DP-600-Labs/
 - How **slowly changing dimensions** keep history accurate (Type 2) or apply corrections to all history (Type 1)
 - How to use **DAX** to add calculated tables, columns and measures to a semantic model, and when a measure is better than a column
 - How to capture a live **event stream**, store it in an eventhouse, query it with **KQL**, and turn it into a real-time dashboard and alert
+- How to clean and shape data with **Dataflow Gen2** and Power Query, why step order matters for **query folding**, and why to always check the loaded output
 - How to build **views**, **data models** and **semantic models** that make data ready for reporting
 
 ---
